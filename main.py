@@ -22,7 +22,10 @@ def character_count(file_path) -> dict:
     char_count = {}
 
     for c in content.lower():
-        char_count[c] = char_count[c] + 1 if c in char_count else 1
+        if c in char_count:
+            char_count[c] = char_count[c] + 1
+        else:
+            char_count[c] = 1
 
     return(char_count)
 
